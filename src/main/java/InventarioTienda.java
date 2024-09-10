@@ -2,13 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 
-
 public class InventarioTienda {
 
     public static void main(String[] args) {
         Object[][] productos = new Object[10][3];
         ejecutarMenu(productos);
-
     }
 
     public static void ejecutarMenu(Object[][] productos) {
@@ -36,7 +34,6 @@ public class InventarioTienda {
 
     public static int leerOpcion() {
         int opcion = 0;
-
         while (true) {
             Scanner scanner = crearScanner();
             try {
@@ -93,7 +90,6 @@ public class InventarioTienda {
         int idProducto;
         String nombre;
         int cantidad;
-
         switch (opcion) {
             case 1:
                 idProducto = idProductoScanner();
@@ -106,7 +102,6 @@ public class InventarioTienda {
                 cantidad = cantidadScanner();
                 restarProductos(idProducto, cantidad, productos);
                 break;
-
             case 3:
                 idProducto = idProductoScanner();
                 System.out.println(consultarDisponibilidad(idProducto, productos));
@@ -174,10 +169,6 @@ public class InventarioTienda {
                 lista += "ID: " + producto[0] + ", Nombre: " + producto[1] + ", Cantidad: " + producto[2] + "\n";
             }
         }
-
         return lista.isEmpty() ? "No hay productos." : lista;
     }
 }
-
-
-
